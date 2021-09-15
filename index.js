@@ -83,9 +83,7 @@ const url4 = url2[1];
 
 // inline keyboard
 const inKey = [
-  [{text:'List Channel',callback_data:'DOC'},{text:' Join Vip',callback_data:'HELP'}],
-  [{text: `${url3}`, url: `${url4}`}],
-  [{text:'Order Bot',callback_data:'ORDER'}]
+  [{text:'List Channel',callback_data:'DOC'},
 ];
 
 const inKey2 = [
@@ -327,7 +325,6 @@ bot.action('HELP',(ctx)=>{
         disable_web_page_preview: true,
         reply_markup:{
             inline_keyboard: [
-                [{text:'Join Group Vip',callback_data:'INS'},{text:'Beli Nomor Us',callback_data:'COMM'}],
                 [{text:'Kembali',callback_data:'STARTUP'}]
             ]
         }
@@ -386,18 +383,8 @@ bot.action('COMM',(ctx)=>{
     })
 })
 
-bot.action('ORDER',(ctx)=>{
-    ctx.deleteMessage()
-    ctx.reply(`${helpcommand.botorder}`,{
-        parse_mode: 'HTML',
-        disable_web_page_preview: true,
-        reply_markup:{
-            inline_keyboard: [
-                [{text:'Join Group VIP',callback_data:'HELP'}]
-            ]
-        }
-    })
-})
+
+            
 
 bot.action('STARTUP',async(ctx)=>{
     ctx.deleteMessage()
